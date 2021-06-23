@@ -1,19 +1,11 @@
 const express=require("express");
-
+const controller=require("./api/controller")
 
 const app=express();
 
 app.set("port",5000);
 
-app.get("/:val2",function(req,resp){
-
-    const val1=req.query.val1;
-    const val2=req.params.val2;
-
-    console.log(val1,val2)
-    console.log(parseInt(val1)*parseInt(val2))
-    
-})
+app.get("/:val2",controller.multiply)
 
 app.listen(app.get("port"),function(){
 

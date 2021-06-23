@@ -1,6 +1,6 @@
 
 
-module.exports.multipy=function(req,resp){
+module.exports.multiply=function(req,resp){
 
     const val1=req.query.val1;
     const val2=req.params.val2;
