@@ -1,0 +1,12 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Assignment two contain Q1",
+  "main": "app.js",
+  "scripts": {
+    "start":"nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Minte",
+  "license": "ISC"
+}
