@@ -4,6 +4,11 @@ const path = require("path");
 
 app.set("port", 5050);
 
+app.use(function(req,resp,next){
+
+    console.log(req.route,req.url);
+    next();
+})
 
 app.get("/", function (req, resp) {
     resp.status(200).sendFile(path.join(__dirname, "public", "index.html"))
