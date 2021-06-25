@@ -1,22 +1,45 @@
 [{
-	"_id": {
-		"$oid": "60d3bdad1163ec5a6e4439c8"
-	},
+	
 	"name": "jack",
-	"grade": 3.1
+	"grade": 3.1,
+	"course":[{
+		"courseId":"cs572",
+		"courseName":"MWA"
+	},
+	{
+		"courseId":"cs475",
+		"courseName":"WAP"
+	}]
 },
 {
-	"_id": {
-		"$oid": "60d3bdad1163ec5a6e4439c9"
-	},
+	
 	"name": "jim",
-	"grade": 2.7
+	"grade": 2.7,
+	"course":[
+	{
+		"courseId":"cs406",
+		"courseName":"MPP"
+	},
+	{
+		"courseId":"cs475",
+		"courseName":"WAP"
+	}]
 },
 {
-	"_id": {
-		"$oid": "60d3bdad1163ec5a6e4439ca"
-	},
+	
 	"name": "jill",
-	"grade": 3.5
+	"grade": 3.5,
+	"course":[{
+		"courseId":"cs572",
+		"courseName":"MWA"
+	},
+	{
+		"courseId":"cs406",
+		"courseName":"MPP"
+	},
+	{
+		"courseId":"cs475",
+		"courseName":"WAP"
+	}]
 }]
 
