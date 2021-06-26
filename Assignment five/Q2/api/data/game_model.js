@@ -6,8 +6,9 @@ const publisherSchema =new mongoose.Schema({
         require:true
 
     },
+    address:String,
     location:{
-        address:String,
+        
         coordinates:{
             
             type:[Number], //logitude(E/W) and latitude(N/S)
