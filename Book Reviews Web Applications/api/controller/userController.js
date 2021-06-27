@@ -45,3 +45,20 @@ module.exports.userGetOne = function (req, resp) {
     resp.status(response.status).json(response.massage);
   });
 };
+
+//get api/user/:id
+module.exports.userFullUpdate = function (req, resp) {
+  const userId = req.params.id;
+  const reqBody = req.body;
+  console.log(reqBody);
+  const newUser = {
+    name: reqBody.name,
+    role: reqBody.role,
+    address: reqBody.address,
+    NumberOfReview: reqBody.NumberOfReview,
+  };
+  User.findByIdAndUpdate(userId, newUser).exec(function (err, result) {
+    const response = harden.harden(err, result);
+    resp.status(response.status).json(response.massage);
+  });
+};

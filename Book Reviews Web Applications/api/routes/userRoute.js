@@ -4,10 +4,14 @@ const userController = require("../controller/userController");
 const router = express.Router();
 
 router
-  .route("/user")
+  .route("/users")
   .post(userController.userAddone)
   .get(userController.userGetAll);
 
-router.route("/user/:id").delete(userController.userDeleteOne);
+router
+  .route("/users/:id")
+  .get(userController.userGetOne)
+  .put(userController.userFullUpdate)
+  .delete(userController.userDeleteOne);
 
 module.exports = router;
