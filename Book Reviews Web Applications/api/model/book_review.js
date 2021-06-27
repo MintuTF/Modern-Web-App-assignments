@@ -16,11 +16,11 @@ const bookReview = new mongoose.Schema({
     required: true,
   },
   author: {
-    type: String,
-    required: true,
+    type: user.user,
+    //required: true,
   },
   edition: {
-    type: String,
+    type: Number,
     required: true,
   },
   reader: {
