@@ -18,3 +18,30 @@ module.exports.userAddone = function (req, resp) {
     resp.status(response.status).json(response.massage);
   });
 };
+
+// get api/user
+module.exports.userGetAll = function (req, resp) {
+  User.find().exec(function (err, result) {
+    const response = harden.harden(err, result);
+    resp.status(response.status).json(response.massage);
+  });
+};
+
+// delete api/user/:id
+
+module.exports.userDeleteOne = function (req, resp) {
+  const userId = req.params.id;
+  User.findByIdAndRemove(userId).exec(function (err, result) {
+    const response = harden.harden(err, result);
+    resp.status(response.status).json(response.massage);
+  });
+};
+
+//get api/user/:id
+module.exports.userGetOne = function (req, resp) {
+  const userId = req.params.id;
+  User.findById(userId).exec(function (err, result) {
+    const response = harden.harden(err, result);
+    resp.status(response.status).json(response.massage);
+  });
+};
