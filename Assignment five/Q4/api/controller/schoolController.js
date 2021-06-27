@@ -8,7 +8,10 @@ module.exports.getAllStudents = function (req, resp) {
   if (req.query.count && req.query.offset) {
     count = parseInt(req.query.count);
     offset = parseInt(req.query.offset);
+    
+
   }
+
 
   Students.find()
     .skip(offset)
@@ -27,7 +30,9 @@ module.exports.getOneStudent = function (req, resp) {
 };
 
 module.exports.gamesAddone = function (req, resp) {
-  Students.insertOne(resp.body).exec(function (err, result) {
+    
+  Students.insertOne(.body).exec(function (err, result) {
     console.log(result);
   });
 };
+
