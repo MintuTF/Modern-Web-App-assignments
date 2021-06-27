@@ -8,19 +8,23 @@ const courseList = new mongoose.Schema({
   },
   courseName: {
     type: String,
-    require: true,
+    required: true,
   },
 });
 
 const schoolSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   grade: {
     type: Number,
+    required: true,
   },
-  course: [courseList],
+  course: {
+    type: [courseList],
+    required: true,
+  },
 });
 
 mongoose.model("students", schoolSchema);

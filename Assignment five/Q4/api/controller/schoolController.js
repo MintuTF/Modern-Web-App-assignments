@@ -15,8 +15,8 @@ module.exports.getAllStudents = function (req, resp) {
     .skip(offset)
     .limit(count)
     .exec(function (err, result) {
-      console.log("found games", result);
-      resp.status(200).json(result);
+      const response = harden.harden(err, result);
+      resp.status(response.status).json(response.massage);
     });
 };
 
@@ -83,6 +83,7 @@ module.exports.studentsFullUpdate = function (req, resp) {
       });
     }
   });
+
   //   Students.findByIdAndUpdate(studentId, newStudent, function (err, result) {
   //     const response = harden.harden(err, result);
   //     console.log(result);
