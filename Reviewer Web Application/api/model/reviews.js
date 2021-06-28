@@ -10,7 +10,7 @@ const readerFeedback = new mongoose.Schema({
   },
 });
 
-const bookReview = new mongoose.Schema({
+const Reviews = new mongoose.Schema({
   title: {
     type: String,
     required: true,
@@ -23,10 +23,10 @@ const bookReview = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  reader: {
+  readerFeedback: {
     type: [readerFeedback],
     required: true,
   },
 });
 
-mongoose.model("BookReview", bookReview);
+mongoose.model("Review", Reviews);

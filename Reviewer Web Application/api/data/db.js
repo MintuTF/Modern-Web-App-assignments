@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 require("../model/user");
+require("../model/reviews");
 const dbName = "BookReviewDB";
 const dbUrl = "mongodb://localhost:27017/" + dbName;
 
