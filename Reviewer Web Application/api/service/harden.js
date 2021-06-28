@@ -8,7 +8,7 @@ module.exports.harden = function (err, result) {
     respose.status = 500;
     respose.massage = err;
   } else if (!result) {
-    respose.status = 500;
+    respose.status = 400;
     respose.massage = { error: "you entered wrong input" };
   }
   return respose;

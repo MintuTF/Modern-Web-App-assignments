@@ -7,17 +7,17 @@ const path = require("path");
 
 app.set("port", 5000);
 
+app.use(function (req, resp, next) {
+  console.log(req.method, req.url);
+  next();
+});
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", userRoute);
 app.use("/api/post", reviewRoute);
-
-app.use(function (req, resp, next) {
-  console.log(req.method, req.url);
-  next();
-});
 
 const server = app.listen(app.get("port"), function () {
   const port = server.address().port;

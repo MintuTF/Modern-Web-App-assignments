@@ -21,10 +21,26 @@ module.exports.userAddone = function (req, resp) {
 
 // get api/user
 module.exports.userGetAll = function (req, resp) {
-  User.find().exec(function (err, result) {
-    const response = harden.harden(err, result);
-    resp.status(response.status).json(response.massage);
-  });
+  const count = 8;
+  const offset = 0;
+
+  if (req.query.count && req.query.offset) {
+    count = req.query.count;
+    offset = req.query.count;
+  }
+
+  if (isNaN(req.query.count) || isNaN(req.query.offset)) {
+    resp.status(400).json({ error: "user input error" });
+    return;
+  }
+
+  User.find()
+    .skip(offset)
+    .limit(count)
+    .exec(function (err, result) {
+      const response = harden.harden(err, result);
+      resp.status(response.status).json(response.massage);
+    });
 };
 
 // delete api/user/:id

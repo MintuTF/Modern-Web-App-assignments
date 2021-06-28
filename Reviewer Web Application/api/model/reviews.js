@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const user = require("./user");
-const readerFeedback = new mongoose.Schema({
+// const user = require("./user");
+const userFeedback = new mongoose.Schema({
   user: {
-    type: user.user,
+    type: String,
     required: true,
   },
   date: {
@@ -16,16 +16,16 @@ const Reviews = new mongoose.Schema({
     required: true,
   },
   author: {
-    type: user.user,
+    type: String,
     //required: true,
   },
-  edition: {
-    type: Number,
+  type: {
+    type: String,
     required: true,
   },
-  readerFeedback: {
-    type: [readerFeedback],
-    required: true,
+
+  feedback: {
+    type: [userFeedback],
   },
 });
 
