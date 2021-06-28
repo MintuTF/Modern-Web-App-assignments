@@ -5,12 +5,13 @@ const address = new mongoose.Schema({
     type: String,
     required: true,
   },
-  city: {
+  state: {
     type: String,
     required: true,
   },
-  state: {
+  city: {
     type: String,
+    required: true,
   },
 });
 
@@ -24,7 +25,7 @@ const user = new mongoose.Schema({
     type: String,
     required: true,
   },
-  adderss: {
+  address: {
     type: address,
   },
   NumberOfReview: {
