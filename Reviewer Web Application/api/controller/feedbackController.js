@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const harden = require("../service/harden");
 const Review = mongoose.model("Review");
 
-// post  api/user/:id/feedback
+// post  api/post/reviews/:id/feedback
 module.exports.addFeedback = function (req, resp) {
   const reviewId = req.params.id;
   const reqBody = req.body;
@@ -20,7 +20,7 @@ module.exports.addFeedback = function (req, resp) {
       if (response.status != 200) {
         resp.status(response.status).json(response.json);
       } else {
-        result.course.push(newFeedBack);
+        result.feedback.push(newFeedBack);
         result.save(function (err, result) {
           const response2 = harden.harden(err, result);
 
