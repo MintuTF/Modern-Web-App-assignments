@@ -27,11 +27,10 @@ module.exports.userGetAll = function (req, resp) {
   if (req.query.count && req.query.offset) {
     count = req.query.count;
     offset = req.query.count;
-  }
-
-  if (isNaN(req.query.count) || isNaN(req.query.offset)) {
-    resp.status(400).json({ error: "user input error" });
-    return;
+    if (isNaN(req.query.count) || isNaN(req.query.offset)) {
+      resp.status(400).json({ error: "user input error" });
+      return;
+    }
   }
 
   User.find()

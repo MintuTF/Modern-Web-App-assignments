@@ -31,11 +31,11 @@ module.exports.reviewsGetAll = function (req, resp) {
   if (req.query.count && req.query.offset) {
     let = req.query.count;
     let = req.query.count;
-  }
 
-  if (isNaN(req.query.count) || isNaN(req.query.offset)) {
-    resp.status(400).json({ error: "user input error" });
-    return;
+    if (isNaN(req.query.count) || isNaN(req.query.offset)) {
+      resp.status(400).json({ error: "user input error" });
+      return;
+    }
   }
 
   console.log("=========");
