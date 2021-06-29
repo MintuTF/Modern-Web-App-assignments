@@ -21,8 +21,8 @@ module.exports.userAddone = function (req, resp) {
 
 // get api/user
 module.exports.userGetAll = function (req, resp) {
-  const count = 8;
-  const offset = 0;
+  let count = 8;
+  let offset = 0;
 
   if (req.query.count && req.query.offset) {
     count = req.query.count;

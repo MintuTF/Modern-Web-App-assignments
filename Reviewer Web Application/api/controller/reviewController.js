@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { listeners } = require("../model/user");
 const harden = require("../service/harden");
 const Review = mongoose.model("Review");
 
@@ -24,12 +25,12 @@ module.exports.addReview = function (req, resp) {
 
 // get api/post/reviews
 module.exports.reviewsGetAll = function (req, resp) {
-  const count = 8;
-  const offset = 0;
+  let count = 8;
+  let offset = 0;
 
   if (req.query.count && req.query.offset) {
-    count = req.query.count;
-    offset = req.query.count;
+    let = req.query.count;
+    let = req.query.count;
   }
 
   if (isNaN(req.query.count) || isNaN(req.query.offset)) {
@@ -37,6 +38,7 @@ module.exports.reviewsGetAll = function (req, resp) {
     return;
   }
 
+  console.log("=========");
   Review.find()
     .skip(offset)
     .limit(count)

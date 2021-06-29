@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 // const user = require("./user");
 const userFeedback = new mongoose.Schema({
-  user: {
+  userName: {
+    type: String,
+    required: true,
+  },
+  feedbackContent: {
     type: String,
     required: true,
   },
