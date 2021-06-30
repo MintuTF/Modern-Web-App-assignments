@@ -1,0 +1,8 @@
+<h4>List of games</h4>
+
+<div ng-repeat="game in getGame.games">
+  <ul>
+    <a ng-href="#!/games/{{game._id}}">{{game.title}}</a>
+  </ul>
+</div>
+;

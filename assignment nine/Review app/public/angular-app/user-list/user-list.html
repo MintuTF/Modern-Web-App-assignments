@@ -1,0 +1,8 @@
+<h4>List of users</h4>
+<div ng-repeat="user in allUser.users">
+  <ul>
+    <li>
+      <a ng-href="#!/users/{{user._id}}"> {{user.name}}<br /> </a>
+    </li>
+  </ul>
+</div>
