@@ -1,9 +1,11 @@
 <h4>List of Reviews</h4>
 <div ng-repeat="feedback in allFeedback.feedbacks">
   <ul>
-    <li>
+    <li>  
       
-        {{review.title}}<br />
+        {{feedback.feedback.userName}}<br />
+        {{feedback.feedback.feedbackContent}}<br />
+        {{feedback.feedback.date}}<br />
       </a>
     </li>
   </ul>

@@ -18,7 +18,7 @@ function config($routeProvider) {
       controller: "getAllReviews",
       controllerAs: "allReviews",
     })
-    .when("reviews/feedbacks", {
+    .when("/reviews/:id/feedbacks", {
       templateUrl: "angular-app/feedback-list/feedback-list.html",
       controller: "getFeedback",
       controllerAs: "allFeedback",
