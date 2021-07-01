@@ -1,0 +1,31 @@
+<dev
+  style="color: rgb(236, 236, 243); text-align: center"
+  ng-controller="getAllGame as vm"
+>
+  <form method="post" ng-submit="vm.addgame()" action="#!/games">
+    <label for="fname">game title:</label>
+    <input
+      type="text"
+      id="fname"
+      name="fname"
+      ng-model="vm.title"
+    /><br /><br />
+    <label for="lname">price:</label>
+    <input
+      type="text"
+      id="lname"
+      name="lname"
+      ng-model="vm.price"
+    /><br /><br />
+    <label for="fname">year</label>
+    <input type="text" id="fname" name="fname" ng-model="vm.year" /><br /><br />
+    <label for="lname">maxPlayers:</label>
+    <input
+      type="text"
+      id="lname"
+      name="lname"
+      ng-model="vm.maxPlayers"
+    /><br /><br />
+    <input type="submit" value="Submit" />
+  </form>
+</dev>

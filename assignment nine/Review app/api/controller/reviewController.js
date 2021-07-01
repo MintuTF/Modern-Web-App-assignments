@@ -56,3 +56,13 @@ module.exports.reviewsGetOne = function (req, resp) {
     resp.status(response.status).json(response.massage);
   });
 };
+
+// delte api/post/reviews/:id
+
+module.exports.reviewDeleteOne = function (req, resp) {
+  const userId = req.params.id;
+  Review.findByIdAndRemove(userId).exec(function (err, result) {
+    const response = harden.harden(err, result);
+    resp.status(response.status).json(response.massage);
+  });
+};

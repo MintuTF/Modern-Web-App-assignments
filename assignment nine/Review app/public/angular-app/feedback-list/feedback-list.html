@@ -1,10 +1,25 @@
 <h4>List of Reviews</h4>
+<div>
+
+
 <div ng-repeat="feedback in allFeedback.feedbacks">
   <ul>
-    <li>
-      
-        {{review.title}}<br />
+    <li>  
+
+    {{allReviews.reviews.title}}
+        {{feedback.userName}}<br />
+        {{feedback.feedbackContent}}<br />
+        {{feedback.date}}<br />  <br/> 
+        
+        <a ng-controller="getFeedback as vm" ng-model="vm._id" > 
+          <input type="submit" value="delete feedback" ng-click="vm.deleteOnes(feedback._id)" /></a>
+        
       </a>
     </li>
   </ul>
+</div>
+<a ng-href="#!/review/feedback/addfeedback">
+  <input type="submit" value="add feedback"  /></a>
+</a>
+
 </div>

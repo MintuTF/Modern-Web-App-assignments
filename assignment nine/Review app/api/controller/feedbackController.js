@@ -42,3 +42,24 @@ module.exports.getFeedback = function (req, resp) {
       resp.status(response.status).json(response.massage);
     });
 };
+
+//
+
+module.exports.deleteOneFeedback = function (req, resp) {
+  const userId = req.params.id;
+  const feedbackId = req.params.feedbackId;
+
+  Review.findById(userId).exec(function (err, result) {
+    const response = harden.harden(err, result);
+
+    if (response.status != 200) {
+      resp.status(response.status).json(response.massage);
+    } else {
+      result.feedback.id(feedbackId).remove();
+      result.save(function (err, result) {
+        const response = harden.harden(err, result);
+        resp.status(response.status).json(response.massage);
+      });
+    }
+  });
+};

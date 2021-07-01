@@ -2,7 +2,14 @@
 <div ng-repeat="review in allReviews.reviews">
   <ul>
     <li>
-      <a ng-href="#!/reviews/feedbacks"> {{review.title}}<br /> </a>
+      <a ng-href="#!/reviews/{{review._id}}/feedbacks">
+        {{review.title}}<br />
+        {{review.type}}<br />
+        {{review.author}}<br />
+      </a>
     </li>
   </ul>
 </div>
+<a ng-href="#!/reviews/addreview">
+  <input type="submit" value="add feedback"  /></a>
+</a>

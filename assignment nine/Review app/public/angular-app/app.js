@@ -18,11 +18,21 @@ function config($routeProvider) {
       controller: "getAllReviews",
       controllerAs: "allReviews",
     })
-    .when("reviews/feedbacks", {
+    .when("/reviews/:id/feedbacks", {
       templateUrl: "angular-app/feedback-list/feedback-list.html",
       controller: "getFeedback",
       controllerAs: "allFeedback",
     })
+    .when("/reviews/addreview", {
+      templateUrl: "angular-app/review-list/add-review.html",
+      controller: "getAllReviews",
+      controllerAs: "allFeedback",
+    })
+    // .when("/review/feedback/addfeedback", {
+    //   templateUrl: "angular-app/add-feedback/add-feedback.html",
+    //   controller: "getFeedback",
+    //   controllerAs: "vm",
+    // })
     .otherwise({
       redirectTo: "/",
     });

@@ -10,10 +10,16 @@ router
   .post(reviewController.addReview);
 // .get(bookReviewController.userGetAll);
 
-router.route("/reviews/:id").get(reviewController.reviewsGetOne);
+router
+  .route("/reviews/:id")
+  .get(reviewController.reviewsGetOne)
+  .delete(reviewController.reviewDeleteOne);
 router
   .route("/reviews/:id/feedback")
   .post(feedbackController.addFeedback)
   .get(feedbackController.getFeedback);
 
+router
+  .route("/reviews/:id/feedback/:feedbackId")
+  .delete(feedbackController.deleteOneFeedback);
 module.exports = router;

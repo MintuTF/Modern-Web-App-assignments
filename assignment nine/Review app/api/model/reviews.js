@@ -3,11 +3,9 @@ const mongoose = require("mongoose");
 const userFeedback = new mongoose.Schema({
   userName: {
     type: String,
-    required: true,
   },
   feedbackContent: {
     type: String,
-    required: true,
   },
   date: {
     type: String,

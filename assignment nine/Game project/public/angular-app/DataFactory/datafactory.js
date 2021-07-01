@@ -4,6 +4,7 @@ function gameFactory($http) {
   return {
     getOne: getOneGame,
     getAll: getAllGame,
+    addgame: addgame,
   };
 
   function getAllGame() {
@@ -15,6 +16,10 @@ function gameFactory($http) {
       .get("/api/games/" + id)
       .then(complete)
       .catch(failed);
+  }
+
+  function addgame(newGame) {
+    return $http.post("/api/games/", newGame).then(complete).catch(failed);
   }
 
   function complete(response) {

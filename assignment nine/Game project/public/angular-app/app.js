@@ -14,6 +14,12 @@ function config($routeProvider) {
       controller: "getOneGame",
       controllerAs: "vm",
     })
+    .when("/game/addgame", {
+      templateUrl: "angular-app/game-list/add-game.html",
+      controller: "getAllGame",
+      controllerAs: "vm",
+    })
+
     .otherwise({
       redirectTo: "/",
     });
