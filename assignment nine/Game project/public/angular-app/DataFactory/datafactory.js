@@ -5,6 +5,7 @@ function gameFactory($http) {
     getOne: getOneGame,
     getAll: getAllGame,
     addgame: addgame,
+    deleteOne: deleteOne,
   };
 
   function getAllGame() {
@@ -20,6 +21,12 @@ function gameFactory($http) {
 
   function addgame(newGame) {
     return $http.post("/api/games/", newGame).then(complete).catch(failed);
+  }
+  function deleteOne(id) {
+    return $http
+      .delete("/api/games/" + id)
+      .then(complete)
+      .catch(failed);
   }
 
   function complete(response) {

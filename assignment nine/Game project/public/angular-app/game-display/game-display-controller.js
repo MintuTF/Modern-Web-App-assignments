@@ -8,8 +8,10 @@ function getOneGame(gameFactory, $routeParams) {
   gameFactory.getOne(id).then(function (response) {
     vm.game = response;
   });
-  // $http.get("/api/games/" + id).then(function (response) {
-  //   console.log(response);
-  //   vm.game = response.data;
-  // });
+
+  vm.deleteGame = function (id) {
+    gameFactory.deleteOne(id).then(function (response) {
+      console.log("successfull deleted");
+    });
+  };
 }

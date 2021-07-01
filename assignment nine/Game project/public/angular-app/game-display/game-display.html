@@ -11,7 +11,7 @@
     </p>
 </div>
 
-<a ng-href="#!/game/addgame">
-    <input type="submit" value="delete games"  /></a>
+<a ng-href="#!/games/" ng-controller="getOneGame">
+    <input type="submit" value="delete game"  ng-click="vm.deleteGame(vm.game._id)" /></a>
   </a>
   
