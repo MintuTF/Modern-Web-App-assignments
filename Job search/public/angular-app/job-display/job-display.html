@@ -1,0 +1,17 @@
+
+<div >
+
+    <H3> Job: <p>{{vm.Job.title}}</p></H3>
+    <p>
+    salary: {{vm.Job.salary | currency}}<BR/>
+    skill: {{vm.Job.skill}}<BR/>
+   exprience: {{vm.Job.exprience}}<BR/>
+   postDate: {{vm.Job.postDate}}</BR>
+  
+    </p>
+</div>
+
+<a ng-href="#!/jobs/" ng-controller="getOneJob as vm">
+    <input type="submit" value="delete Job"  ng-click="vm.deleteJob(vm.Job._id)" /></a>
+  </a>
+  

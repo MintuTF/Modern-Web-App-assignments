@@ -1,11 +1,29 @@
-<h4>List of games</h4>
 
-<div ng-repeat="game in getGame.games">
-  <ul>
-    <a ng-href="#!/games/{{game._id}}">{{game.title}}</a>
-  </ul>
+<br/>
+<br/>
+<div type="text" style="color:white;text-align:center;">
+<form  ng-submit="getGame.search(searchKey)" method="get">
+  <input ng-model="searchKey" name="searchKey" value="searchKey"/></a>
+  
+    <input type="submit" value="search"    /></a>
+
+</form>
+  
+
 </div>
 
-<a ng-href="#!/game/addgame">
-  <input type="submit" value="add games"  /></a>
-</a>
+  <div  ng-repeat="game in getGame.games" >
+    <ul>
+      <a ng-href="#!/games/{{game._id}}">{{game.title}}</a>
+    </ul>
+  </div>
+  <form  ng-submit="getGame.nextPage()" method="get">
+    <a  style="color:white;text-align:center;">
+      <input type="submit" value="next page"  /></a>
+    </a> <br/>
+  </form>
+ 
+
+  
+  
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="gameApp">
+<html ng-app="jobApp">
   <head>
     <title>MEAN Games</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -8,9 +8,11 @@
   <body>
     <div class="topnav" id="myTopnav">
       <a href="/">Home</a>
-      <a href="#!/game/addgame">Add Game</a>
+      <a href="#!/job/addjob">Add Job</a>
     </div>
-    <div ng-view></div>
+    <br /><br />
+    <br />
+    <div ng-view style="scroll-behavior: smooth"></div>
 
     <footer class="footer">
       <div class="container">
@@ -33,8 +35,8 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="./angular-app/app.js"></script>
-    <script src="./angular-app/game-list/game-list-controller.js"></script>
-    <script src="./angular-app/game-display/game-display-controller.js"></script>
+    <script src="./angular-app/job-list/job-list-controller.js"></script>
+    <script src="./angular-app/job-display/job-display-controller.js"></script>
     <script src="angular-app/DataFactory/datafactory.js"></script>
   </body>
 </html>

@@ -19,6 +19,11 @@ function config($routeProvider) {
       controller: "getAllGame",
       controllerAs: "vm",
     })
+    .when("/game/updategame", {
+      templateUrl: "angular-app/game-list/update-game.html",
+      controller: "getAllGame",
+      controllerAs: "vm",
+    })
 
     .otherwise({
       redirectTo: "/",

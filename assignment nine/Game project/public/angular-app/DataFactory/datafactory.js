@@ -6,10 +6,14 @@ function gameFactory($http) {
     getAll: getAllGame,
     addgame: addgame,
     deleteOne: deleteOne,
+    searchgame: searchgame,
   };
 
-  function getAllGame() {
-    return $http.get("/api/games").then(complete).catch(failed);
+  function getAllGame(count, offset) {
+    return $http
+      .get("/api/games?count=" + count + "&offset=" + offset)
+      .then(complete)
+      .catch(failed);
   }
 
   function getOneGame(id) {
@@ -29,6 +33,12 @@ function gameFactory($http) {
       .catch(failed);
   }
 
+  function searchgame(searchKey) {
+    return $http
+      .get("/api/games/?searchKey=" + searchKey)
+      .then(complete)
+      .catch(failed);
+  }
   function complete(response) {
     console.log(response);
 

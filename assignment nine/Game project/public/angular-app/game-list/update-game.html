@@ -2,12 +2,7 @@
   style="color: rgb(236, 236, 243); text-align: center"
   ng-controller="getAllGame as vm"
 >
-  <form
-    name="addgameform"
-    method="post"
-    ng-submit="vm.addgame()"
-    style="margin-bottom: 25px"
-  >
+  <form name="updategameform" method="post" ng-submit="vm.updategame()">
     <label for="fname">game title:</label>
     <input
       type="text"

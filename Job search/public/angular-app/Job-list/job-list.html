@@ -1,0 +1,31 @@
+
+<br/>
+<br/>
+<div type="text" style="color:white;text-align:center;">
+<form  ng-submit="getJob.search(searchKey)" method="get">
+  <input ng-model="searchKey" name="searchKey" value="searchKey"/></a>
+  
+    <input type="submit" value="search"    /></a>
+
+</form>
+  
+
+</div>
+
+  <div  ng-repeat="job in getJob.jobs" >
+    <ul>
+      <a ng-href="#!/jobs/{{job._id}}">{{job.title}}</a>
+    </ul>
+  </div>
+  <form  ng-submit="getJob.nextPage()" method="get" style="color:white;text-align:center;">
+    <input type="submit" value="next page"  /></a>
+ 
+  </form>
+  <form  ng-submit="getJob.prevPage()" method="get" style="color:white;text-align:center; margin-bottom: 20px">
+    <input type="submit" value="previous page"  /></a>
+    <br/>
+  </form> 
+
+  
+  
+
