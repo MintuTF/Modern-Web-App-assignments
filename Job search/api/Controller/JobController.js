@@ -5,12 +5,21 @@ const Job = mongoose.model("Job");
 // post api/jobs
 module.exports.addJob = function (req, resp) {
   const reqBody = req.body;
+  console.log("api sckill", reqBody.skill);
+  let skill = reqBody.skill;
+  let skillsArray = [];
+  if (skill && skill.includes(",")) {
+    skillsArray = skill.split(",");
+  } else if (skill) {
+    skillsArray.push(skill);
+  }
+
   const newJob = {
     title: reqBody.title,
     salary: reqBody.salary,
     location: reqBody.location,
     exprience: reqBody.exprience,
-    skill: reqBody.skill,
+    skill: skillsArray,
     postDate: reqBody.postDate,
   };
 

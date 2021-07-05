@@ -5,25 +5,17 @@ function getAllJob(jobFactory, $location, $routeParams) {
   vm.count = 2;
   vm.offset = $routeParams.offset ? routeParams.offset : 0;
 
-  console.log("====", vm.title);
-  const newJob = {
-    title: vm.title,
-    salary: vm.salary,
-    skill: vm.skill,
-    exprience: vm.exprience,
-  };
-  console.log(vm.title);
   jobFactory.getAll(this.count, this.offset).then(function (response) {
     vm.jobs = response;
   });
 
   vm.nextPage = function () {
-    console.log("======");
     vm.offset = vm.offset + vm.count;
     jobFactory.getAll(this.count, this.offset).then(function (response) {
       vm.jobs = response;
     });
   };
+
   vm.prevPage = function () {
     vm.offset = vm.offset - vm.count;
     if (this.offset < 0) {
@@ -35,9 +27,17 @@ function getAllJob(jobFactory, $location, $routeParams) {
   };
 
   vm.addJob = function () {
+    const newJob = {
+      title: vm.title,
+      salary: vm.salary,
+      skill: vm.skill,
+      exprience: vm.exprience,
+      postDate: Date.now(),
+    };
+
     jobFactory.addJob(newJob).then(function (response) {
-      console.log(response);
-      $location.path("/jobs");
+      console.log("successfully added");
+      $location.path("/");
     });
   };
 
@@ -48,8 +48,4 @@ function getAllJob(jobFactory, $location, $routeParams) {
       vm.jobs = response;
     });
   };
-
-  // vm.updategame = function () {
-  //   vm.update = vm.games;
-  // };
 }

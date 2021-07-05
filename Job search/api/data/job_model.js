@@ -24,7 +24,7 @@ const JobSchema = new mongoose.Schema({
     type: String,
   },
   skill: {
-    type: String,
+    type: [String],
   },
   postDate: {
     type: Number,

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="ReviewApp">
+  <head>
+    <title>Review Games</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/custome.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav-navigation></nav-navigation>
+    <div ng-view></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted text-center">
+          <a href="https://compro.miu.edu" target="_blank"
+            ><img
+              src="./images/compro-web-logo-442x112.webp"
+              height="60"
+              alt="MIU Compro"
+          /></a>
+          <br />
+          <small class="textblack-50 text-center"
+            >&copy; 2021 Maharishi International University. All Rights
+            Reserved.
+          </small>
+        </p>
+      </div>
+    </footer>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="./angular-app/app.js"></script>
+    <script src="./angular-app/user-list/user-list-controller.js"></script>
+    <script src="./angular-app/DataFactory/userFactory.js"></script>
+    <script src="./angular-app/user-display/user-display-controller.js"></script>
+    <script src="./angular-app/review-list/review-list-controller.js"></script>
+    <script src="./angular-app/DataFactory/reviewFactory.js"></script>
+    <script src="./angular-app/feedback-list/feedback-list-controller.js"></script>
+    <script src="./angular-app/DataFactory/feedbackFactory.js"></script>
+    <script src="./angular-app/DataFactory/users-data-factory.js"></script>
+    <script src="./angular-app/add-feedback/add-feedback-controller.js"></script>
+    <script src="./angular-app/navBar/navbar-directive.js"></script>
+    <script src="angular-app/authentication/auth-factory.js"></script>
+    <script src="angular-app/login/login-controller.js"></script>
+    <script src="../node_modules/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="angular-app/authentication/auth-interceptor.js"></script>
+  </body>
+</html>

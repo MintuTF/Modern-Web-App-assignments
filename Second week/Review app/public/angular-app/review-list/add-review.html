@@ -1,0 +1,20 @@
+<div
+  style="color: blue; text-align: center"
+  ng-controller="getAllReviews as vm"
+>
+  <form
+    name="vm.addreviwvform"
+    ng-click="vm.addreview()"
+    action="#!/reviews/addreview"
+    method="post"
+  >
+    <label for="fname">title:</label>
+    <input type="text" id="fname" ng-model="vm.title" /><br /><br />
+    <label for="fname">type:</label>
+    <input type="text" id="fname" name="fname" ng-model="vm.type" /><br /><br />
+    <label for="country">author:</label>
+    <input type="text" ng-model="vm.author" /><br />
+
+    <input type="submit" value="Submit" />
+  </form>
+</div>

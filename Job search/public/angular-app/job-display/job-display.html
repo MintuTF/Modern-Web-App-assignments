@@ -4,9 +4,9 @@
     <H3> Job: <p>{{vm.Job.title}}</p></H3>
     <p>
     salary: {{vm.Job.salary | currency}}<BR/>
-    skill: {{vm.Job.skill}}<BR/>
+    skill: <ul ng-repeat="sk in vm.Job.skill"><li> {{sk}} </li></ul><BR/>
    exprience: {{vm.Job.exprience}}<BR/>
-   postDate: {{vm.Job.postDate}}</BR>
+   postDate: {{vm.Job.postDate| date}}</BR>
   
     </p>
 </div>
