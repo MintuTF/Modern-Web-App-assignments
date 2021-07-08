@@ -4,6 +4,7 @@ const addressControler = require("../controller/addressController");
 
 const router = express.Router();
 
+router.route("/login").post(userController.loginUser);
 router
   .route("/users")
   .post(userController.userAddone)
