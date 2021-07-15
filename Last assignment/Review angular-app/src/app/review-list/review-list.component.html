@@ -1,0 +1,7 @@
+<p>Welcome to {{ title }} Application!</p>
+
+<li *ngFor="let review of reviews">
+  <a routerLink="/review/{{ review._id }}">{{ review.title }}<br /></a>
+  <!-- Price:{{review.price | currency}}<br>
+    Year:{{review.year}}<br> -->
+</li>

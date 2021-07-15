@@ -8,14 +8,24 @@ const router = express.Router();
 router
   .route("/games")
   .get(controllerGames.gamesGetAll)
-  .post(controllerUsers.authenticate, controllerGames.gamesAddOne);
+  .post(controllerGames.gamesAddOne);
+// router
+//   .route("/games")
+//   .get(controllerGames.gamesGetAll)
+//   .post(controllerUsers.authenticate, controllerGames.gamesAddOne);
 
 router
   .route("/games/:gameID")
   .get(controllerGames.gamesGetOne)
   .put(controllerUsers.authenticate, controllerGames.gamesFullUpdateOne)
   .patch(controllerUsers.authenticate, controllerGames.gamesPartialUpdateOne)
-  .delete(controllerUsers.authenticate, controllerGames.gamesDeleteOne);
+  .delete(controllerGames.gamesDeleteOne);
+// router
+// .route("/games/:gameID")
+// .get(controllerGames.gamesGetOne)
+// .put(controllerUsers.authenticate, controllerGames.gamesFullUpdateOne)
+// .patch(controllerUsers.authenticate, controllerGames.gamesPartialUpdateOne)
+// .delete(controllerUsers.authenticate, controllerGames.gamesDeleteOne);
 
 router
   .route("/games/:gameID/publishers")

@@ -1,0 +1,11 @@
+<h1>Information about {{ game.title }}</h1>
+
+<p>
+  Title:{{ game.title }}<br />
+  Price:{{ game.price }}<br />
+  Year:{{ game.year }}<br />
+</p>
+
+<a routerLink="/games">
+  <input type="submit" value="Delete" (click)="deleteGame(game._id)" />
+</a>

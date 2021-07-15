@@ -1,0 +1,11 @@
+<h1>Information about {{ review.title }}</h1>
+
+<p>
+  Title:{{ review.title }}<br />
+  Price:{{ review.price }}<br />
+  Year:{{ review.year }}<br />
+</p>
+
+<a routerLink="/reviews">
+  <input type="submit" value="Delete" (click)="deletereview(review._id)" />
+</a>

@@ -1,0 +1,90 @@
+<form
+  #newreview="ngForm"
+  (ngSubmit)="addreview(newreview.value)"
+  class="newreviewForm"
+>
+  fill in all the fields below to add review:<BR /> <label for="">Title </label
+  ><br />
+  <input
+    type="text"
+    style="width: 600px"
+    name="title"
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <label for="">Price </label><br />
+  <input
+    type="number"
+    style="width: 600px"
+    name="price"
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <label for="">Rating </label><br />
+  <input
+    type="number"
+    style="width: 600px"
+    name="rate"
+    required
+    ngModel
+    ng-pattern="/^[0-5]{1}$/"
+    style="color: black"
+  /><BR />
+
+  <label for="">Min Number of Players </label><br />
+  <input
+    type="number"
+    style="width: 600px"
+    name="minPlayers"
+    required
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <label for="">Max Number of Players </label><br />
+  <input
+    type="number"
+    style="width: 600px"
+    name="maxPlayers"
+    required
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <label for="">Min Player Age </label><br />
+  <input
+    type="number"
+    style="width: 600px"
+    name="minAge"
+    required
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <label for="">publisher Name </label><br />
+  <input
+    type="text"
+    style="width: 600px"
+    name="designers"
+    required
+    ngModel
+    ng-pattern="/^[0-9]{2,4}$/"
+    style="color: black"
+  /><BR />
+
+  <label for="">Year </label><br />
+  <input
+    type="date"
+    style="width: 600px"
+    name="year"
+    required
+    ngModel
+    style="color: black"
+  /><BR />
+
+  <button type="submit" class="btn-success" [disabled]="!newreview.valid">
+    Add review</button
+  ><BR />
+</form>

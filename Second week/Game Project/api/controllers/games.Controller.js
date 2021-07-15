@@ -100,6 +100,7 @@ module.exports.gamesAddOne = function (req, resp) {
   };
 
   Game.create(newGame, function (err, result) {
+    console.log(err);
     const response = harden.harden(err, result);
     resp.status(response.status).json(response.massage);
   });
@@ -214,7 +215,7 @@ module.exports.gamesDeleteOne = function (req, resp) {
       .json({ message: "RequiestParam Game ID is not propper format" });
   }
 
-  Game.findByIdAndRemove(gameID).exec(function (err, deletedGame) {
+  Game.findByIdAndRemove(gameID).exec(function (err, result) {
     const response = harden.harden(err, result);
     resp.status(response.status).json(response.massage);
   });
