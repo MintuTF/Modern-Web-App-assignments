@@ -1,0 +1,13 @@
+form {
+  align-content: center;
+  margin-left: 40%;
+}
+
+input {
+  width: 25%;
+  height: 5%;
+}
+
+label {
+  font-size: 120%;
+}
